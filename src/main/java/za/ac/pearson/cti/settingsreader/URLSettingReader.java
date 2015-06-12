@@ -13,8 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -23,6 +22,7 @@ import org.json.simple.parser.ParseException;
  *
  * @author uboshet
  */
+@Slf4j
 public class URLSettingReader implements SettingReader {
     
     // Variables
@@ -52,7 +52,7 @@ public class URLSettingReader implements SettingReader {
             JSONObject jsonObject = (JSONObject) obj;
             settings.putAll(jsonObject);
         } catch (ParseException | IOException ex) {
-            Logger.getLogger(URLSettingReader.class.getName()).log(Level.SEVERE, null, ex);
+            log.error(ex.toString());
         }
         return settings;
     }
