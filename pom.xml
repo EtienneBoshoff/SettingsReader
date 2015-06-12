@@ -37,25 +37,19 @@
         <plugins>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                  <archive>
-                    <manifest>
-                      <mainClass>za.ac.pearson.cti.settingsreader.TestSettingReader.java</mainClass>
-                    </manifest>
-                  </archive>
-                  <descriptorRefs>
-                    <descriptorRef>jar-with-dependencies</descriptorRef>
-                  </descriptorRefs>
-                </configuration>
                 <executions>
                   <execution>
-                    <id>make-assembly</id> <!-- this is used for inheritance merges -->
-                    <phase>package</phase> <!-- bind to the packaging phase -->
+                    <phase>package</phase>
                     <goals>
                       <goal>single</goal>
                     </goals>
                   </execution>
                 </executions>
+                <configuration>
+                  <descriptorRefs>
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                  </descriptorRefs>
+                </configuration>
             </plugin>
         </plugins>
     </build>
